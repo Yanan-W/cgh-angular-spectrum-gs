@@ -10,11 +10,11 @@
 
 标量光场 $U(x,y;0)$ 经自由空间传播距离 $z$ 后：
 
-$$U(x,y;z) = \mathcal{F}^{-1}\Big\{\, \mathcal{F}\big\{U(x,y;0)\big\} \cdot H(f_x,f_y;z) \,\Big\}$$
+$$U(x,y;z) = \mathcal{F}^{-1}\left\{\, \mathcal{F}\left\{U(x,y;0)\right\} \cdot H(f_x,f_y;z) \,\right\}$$
 
 角谱传递函数（不做菲涅尔近轴近似，严格保留根号项）：
 
-$$H(f_x,f_y;z) = \exp\!\Big[\, j\,2\pi z \sqrt{\tfrac{1}{\lambda^2} - f_x^2 - f_y^2}\, \Big], \quad f_x^2+f_y^2 < \tfrac{1}{\lambda^2}$$
+$$H(f_x,f_y;z) = \exp\!\left[\, j\,2\pi z \sqrt{\tfrac{1}{\lambda^2} - f_x^2 - f_y^2}\, \right], \quad f_x^2+f_y^2 < \tfrac{1}{\lambda^2}$$
 
 **倏逝波截断**：当 $f_x^2+f_y^2 \ge 1/\lambda^2$ 时根号项变为虚数，若不处理会使 $H$ 变成随 $z$ 指数增长的因子，导致数值发散——因此该频段直接强制 $H=0$。
 
