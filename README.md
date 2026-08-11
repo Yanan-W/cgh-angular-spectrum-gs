@@ -10,7 +10,7 @@
 
 标量光场 $U(x,y;0)$ 经自由空间传播距离 $z$ 后：
 
-$$U(x,y;z) = \mathcal{F}^{-1}\Big\{\, \mathcal{F}\{U(x,y;0)\} \cdot H(f_x,f_y;z) \,\Big\}$$
+$$U(x,y;z) = \mathcal{F}^{-1}\Big\{\, \mathcal{F}\big\{U(x,y;0)\big\} \cdot H(f_x,f_y;z) \,\Big\}$$
 
 角谱传递函数（不做菲涅尔近轴近似，严格保留根号项）：
 
