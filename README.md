@@ -10,15 +10,15 @@
 
 标量光场 $U(x,y;0)$ 经自由空间传播距离 $z$ 后：
 
-$$U(x,y;z) = \mathcal{F}^{-1}\left\{\, \mathcal{F}\left\{U(x,y;0)\right\} \cdot H(f_x,f_y;z) \,\right\}$$
+$$U(x,y;z) = \mathcal{F}^{-1}\left\lbrace \mathcal{F}\left\lbrace U(x,y;0)\right\rbrace \cdot H(f_x,f_y;z) \right\rbrace$$
 
 角谱传递函数（不做菲涅尔近轴近似，严格保留根号项）：
 
-$$H(f_x,f_y;z) = \exp\!\left[\, j\,2\pi z \sqrt{\tfrac{1}{\lambda^2} - f_x^2 - f_y^2}\, \right], \quad f_x^2+f_y^2 < \tfrac{1}{\lambda^2}$$
+$$H(f_x,f_y;z) = \exp\left[j2\pi z \sqrt{\tfrac{1}{\lambda^2} - f_x^2 - f_y^2}\right], \quad f_x^2+f_y^2 < \tfrac{1}{\lambda^2}$$
 
 **倏逝波截断**：当 $f_x^2+f_y^2 \ge 1/\lambda^2$ 时根号项变为虚数，若不处理会使 $H$ 变成随 $z$ 指数增长的因子，导致数值发散——因此该频段直接强制 $H=0$。
 
-**带限角谱滤波（BLAS）**：即便滤除倏逝波，$H$ 仍是一个啁啾（chirp）相位函数，其局部空间频率随 $z$ 增大而增大；当仿真窗口 $L_x=N\,dx$ 有限时，该啁啾很容易在到达倏逝波边界之前就先超过网格的奈奎斯特频率，产生频谱混叠伪影（远距离传播或欠采样时尤其明显）。参照 Matsushima & Shimobaba (2009) 的方法，对传递函数额外施加频域矩形窗：
+**带限角谱滤波（BLAS）**：即便滤除倏逝波，$H$ 仍是一个啁啾（chirp）相位函数，其局部空间频率随 $z$ 增大而增大；当仿真窗口 $L_x=Ndx$ 有限时，该啁啾很容易在到达倏逝波边界之前就先超过网格的奈奎斯特频率，产生频谱混叠伪影（远距离传播或欠采样时尤其明显）。参照 Matsushima & Shimobaba (2009) 的方法，对传递函数额外施加频域矩形窗：
 
 $$f_{x,\text{limit}} = \frac{1}{\lambda\sqrt{(2z/L_x)^2+1}}, \qquad |f_x| < f_{x,\text{limit}}\ (\text{同理 } f_y)$$
 
